@@ -233,7 +233,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a><?php echo anchor('admin/lihat_nilai',"Lihat Nilai");?></a>
+                                        <a href="#">Edit Nilai</a>
                                     </td>
                                 </tr>
                             </table>
@@ -251,10 +251,7 @@
 							NIM
 						</th>
 						<th>
-							NAMA
-						</th>
-						<th>
-							JURUSAN
+							NILAI
 						</th>
 						<th>
 							PILIHAN
@@ -264,12 +261,11 @@
    				<tbody>
 					<?php 
 						$i = 1 ;
-						foreach ($mhs as $data): 
+						foreach ($nilai as $data): 
 					?>
 					<tr>
 					    <td><?php echo $data->nim ?></td>
-					    <td><?php echo $data->nama ?></td>
-					    <td><?php echo $data->jurusan ?></td>
+					    <td><?php echo $data->n_total ?></td>
 					    <td>
 					    	<div class="btn-group">
 					    	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> 

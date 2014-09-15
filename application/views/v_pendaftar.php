@@ -14,6 +14,7 @@
 	<link href="<?php echo base_url();?>asset/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="<?php echo base_url();?>asset/css/bootstrap.css" rel="stylesheet" type="text/css">
 	<link href="<?php echo base_url();?>asset/css/style.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url();?>asset/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -29,7 +30,27 @@
   
 	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>asset/js/dataTables.bootstrap.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>asset/js/scripts.js"></script>
+	
+	<!-- DataTables CSS -->
+<!--<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.2/css/jquery.dataTables.css">-->
+<link href="<?php echo base_url();?>asset/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
+  
+<!-- jQuery -->
+<!--<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery-1.10.2.min.js"></script>
+-->	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery-1.11.1.min.js"></script>
+	  
+<!-- DataTables -->
+<!--<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.dataTables.js"></script>		
+-->	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.dataTables.min.js"></script>		
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#lihat').DataTable();
+		} );
+	</script>
 </head>
 <body>
 <div class="container">
@@ -45,97 +66,181 @@
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="#">Link</a>
+						<li>
+							<a href="#">Mahasiswa KKNP</a>
 						</li>
 						<li>
-							<a href="#">Link</a>
+							<a href="#">Proposal KKNP</a>
+						</li>
+						<li>
+							<a href="#">Tawaran KKNP</a>
+						</li>
+						<li>
+							<a href="#">Dokumen KKNP</a>
 						</li>
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jurusan<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
+								
 								<li>
 									<a href="#">Teknik Informatika</a>
+								</li>
+								<li class="divider">
 								</li>
 								<li>
 									<a href="#">Teknik Komputer</a>
 								</li>
+								<li class="divider">
+								</li>
 								<li>
 									<a href="#">Sistem Informasi</a>
 								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Separated link</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">One more separated link</a>
-								</li>
+								
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-form navbar-left" role="search">
+					<form class="navbar-form navbar-right" role="search">
 						<div class="form-group">
 							<input class="form-control" type="text" />
 						</div> <button type="submit" class="btn btn-default">Submit</button>
 					</form>
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="#">Link</a>
-						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									<a href="#">Action</a>
-								</li>
-								<li>
-									<a href="#">Another action</a>
-								</li>
-								<li>
-									<a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Separated link</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
+					
 				</div>
 				
 			</nav>
 		</div>
 	</div>
 	<div class="row clearfix">
-			
+				
 		<div class="col-md-3 column">
-			<legend>Login</legend>
-				<?php echo form_open('login/cekuser' , 'class="form-horizontal"'); ?>
-					<div class="form-group">
-				    	<label for="username" class="col-lg-3 control-label">Username</label>
-				    	<div class="col-lg-9">
-				      	<input type="text" class="form-control" name="username"  placeholder="username">
-				    	</div>
-				  	</div>		
-				  <div class="form-group">
-				    <label for="password" class="col-lg-3 control-label">Password</label>
-				    <div class="col-lg-9">
-				      <input type="text" class="form-control" name="password"  placeholder="password">
-				    </div>
-				  </div>
-				  
-				  <div class="form-group">
-				    <div class="col-lg-offset-8 col-lg-10">
-				      <button type="submit" class="btn btn-success">Login</button>
-				    </div>
-				  
-				  </div>
-				  
-				<?php echo form_close(); ?>		
+			<legend>Halaman Pendaftar</legend>
+			<div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-user">
+                            </span>Account</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <a href="#">Tambah Peserta</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="#">Daftar Peserta</a> <span class="label label-info">5</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                        <?php echo anchor('admin/logout'," keluar ");?>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-folder-close">
+                            </span>Data KKNP</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('admin',"Lihat Peserta KKNP");?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-flash text-success"></span><a ><?php echo anchor('admin/add',"Tambah Data KKNP");?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-file text-info"></span><a href="#">Pengajuan</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-comment text-success"></span><a href="#">Comments</a>
+                                        <span class="badge">42</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
+                            </span>Dokumen</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-usd"></span><a href="#">Buat Surat Pengantar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-user"></span><a href="#">Buat Surat Tugas Dosen</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-tasks"></span><a href="#">Tambah Pengumuman</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-shopping-cart"></span><a href="#">Feedback</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th">
+                            </span>Kelola Nilai</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <a href="#">Masukkan Nilai</a> <span class="label label-success">$ 320</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="#">Edit Nilai</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</div>
 		<div class="col-md-9 column">
 			
@@ -165,12 +270,30 @@
 		?>
    				<tbody>
 					<tr class="warning">
-					    <td><?php echo $i++ ?></td>
 					    <td><?php echo $data->nim ?></td>
 					    <td><?php echo $data->nama ?></td>
 					    <td><?php echo $data->jurusan ?></td>
-					    <td><a href="updateMhs/<?php echo $data->idMhs;?>">update</a>|
-					    <a href="delete/<?php echo $data->idMhs;?>">delete</a></td>
+					    <td>
+					    	<div class="btn-group">
+					    	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> 
+					    	Pilihan
+					    	<span class="caret"></span>
+					    	</button>
+								<ul class="dropdown-menu" role="menu">
+									<li>
+										<a ><?php echo anchor('admin/updateMhs/'.$data->idMhs,"  Edit  ");?></a>
+									</li>
+									<li>
+										<a ><?php echo anchor('admin/delete/'.$data->idMhs,"   Hapus  ");?></a>
+									</li>
+									<li class="disabled">
+										<a href="#">Another action</a>
+									</li>
+									<li class="divider">
+									</li>
+								</ul>	
+							</div>
+					    </td>
 					</tr>
 				</tbody>
   		<?php endforeach ?>
@@ -185,8 +308,7 @@
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<h3>
-				HALAMAN PENDAFTAR
-				<?php echo anchor('pendaftar/logout'," </br> keluar <br> ");?>
+				BAGIAN BAWAH
 			</h3>
 		</div>
 	</div>

@@ -14,6 +14,7 @@
 	<link href="<?php echo base_url();?>asset/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="<?php echo base_url();?>asset/css/bootstrap.css" rel="stylesheet" type="text/css">
 	<link href="<?php echo base_url();?>asset/css/style.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url();?>asset/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -29,7 +30,27 @@
   
 	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>asset/js/dataTables.bootstrap.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>asset/js/scripts.js"></script>
+	
+	<!-- DataTables CSS -->
+<!--<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.2/css/jquery.dataTables.css">-->
+<link href="<?php echo base_url();?>asset/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
+  
+<!-- jQuery -->
+<!--<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery-1.10.2.min.js"></script>
+-->	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery-1.11.1.min.js"></script>
+	  
+<!-- DataTables -->
+<!--<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.dataTables.js"></script>		
+-->	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.dataTables.min.js"></script>		
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#lihat').DataTable();
+		} );
+	</script>
 </head>
 <body>
 <div class="container">
@@ -103,7 +124,7 @@
 				  <div class="form-group">
 				    <label for="password" class="col-lg-3 control-label">Password</label>
 				    <div class="col-lg-9">
-				      <input type="text" class="form-control" name="password"  placeholder="password">
+				      <input type="password" class="form-control" name="password"  placeholder="password">
 				    </div>
 				  </div>
 				  
@@ -118,46 +139,31 @@
 		</div>
 		<div class="col-md-9 column">
 			
-			<table class="table">
+			<table id="lihat" class="display">
 				<thead>
 					<tr>
-						<th>
-							NO
-						</th>
-						<th>
-							NIM
-						</th>
-						<th>
-							NAMA
-						</th>
-						<th>
-							JURUSAN
-						</th>
-						<th>
-							PILIHAN
-						</th>
+						<th>NIM</th>
+						<th>NAMA</th>
+						<th>JURUSAN</th>
 					</tr>
 				</thead>
-		<?php 
-			$i = 1 ;
-			foreach ($mhs as $data): 
-		?>
+		
    				<tbody>
-					<tr class="warning">
+   					<?php 
+						$i = 1 ;
+						foreach ($mhs as $data): 
+					?>
+					<tr>
 					    <td><?php echo $data->nim ?></td>
 					    <td><?php echo $data->nama ?></td>
 					    <td><?php echo $data->jurusan ?></td>
-					    <td><a href="updateMhs/<?php echo $data->idMhs;?>">update</a>|
-					    <a href="delete/<?php echo $data->idMhs;?>">delete</a></td>
+					    
 					</tr>
+					<?php endforeach ?>
 				</tbody>
-  		<?php endforeach ?>
   		
   			</table>
-  				<ul class="pagination">
-				<?php echo $pagination ; ?>
-	  				
-				</ul>
+  				
 		</div>
 	</div>
 	<div class="row clearfix">

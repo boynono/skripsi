@@ -127,12 +127,12 @@
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <a><?php echo anchor('admin/add_user',"Tambah Peserta");?></a>
+                                        <a href="#">Tambah Peserta</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a><?php echo anchor('admin/lihat_user',"Daftar Peserta");?></a> <span class="label label-info">5</span>
+                                        <a href="#">Daftar Peserta</a> <span class="label label-info">5</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -154,7 +154,7 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            <table class="table">
+                            <table id="lihat" class="table">
                                 <tr>
                                     <td>
                                         <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('admin',"Lihat Peserta KKNP");?></a>
@@ -233,7 +233,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a><?php echo anchor('admin/lihat_nilai',"Lihat Nilai");?></a>
+                                        <a href="#">Edit Nilai</a>
                                     </td>
                                 </tr>
                             </table>
@@ -241,60 +241,100 @@
                     </div>
                 </div>
             </div>
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Admin</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							<a><?php echo anchor('admin/add',"  tambah data  ");?></a>
+						</li>
+						<li>
+							<a><?php echo anchor('admin/logout'," keluar ");?></a>
+						</li>
+					</ul>	
+				</div>
+				
+				<div class="panel panel-faq">
+				    <div class="panel-heading">
+				        <h4 class="panel-title">
+				            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_2">
+				                1. Some title goes here
+				            </a>
+				        </h4>
+				    </div>
+				    <div id="accordion1_2" class="panel-collapse collapse">
+				        <div class="panel-body">
+				                sample entry text goes here
+				        </div>
+				    </div>
+				</div>
+			</nav>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<?php echo anchor('admin/logout'," </br> keluar <br> ");?>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<?php echo anchor('admin/add'," </br> tambah data <br> ");?>
+				</div>
+				<div class="panel-footer">
+					<?php echo anchor('admin','lihat data');?>
+				</div>
+			</div>
+			
+			<div class="list-group">
+				 <a href="#" class="list-group-item active">Home</a>
+				<div class="list-group-item">
+					List header
+				</div>
+				<div class="list-group-item">
+					<h4 class="list-group-item-heading">
+						List group item heading
+					</h4>
+					<p class="list-group-item-text">
+						...
+					</p>
+				</div>
+				<div class="list-group-item">
+					<span class="badge">14</span>Help
+				</div> <a class="list-group-item active"><span class="badge">14</span>Help</a>
+			</div>
 		</div>
 		<div class="col-md-9 column">
+			<fieldset>
+    		<legend>tambah peserta</legend>
+				<form class="form-horizontal" role="form" action='<?= base_url();?>index.php/admin/add_user' method="post">
+				 <div class="form-group">
+				    <label for="firstName" class="col-lg-3 control-label">username</label>
+				    <div class="col-lg-6">
+				      <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan username">
+				    </div>
+				  </div>	
+				  <div class="form-group">
+				    <label for="lastName" class="col-lg-3 control-label">password</label>
+				    <div class="col-lg-6">
+				      <input type="text" class="form-control" name="password" id="password" placeholder="password">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="email" class="col-lg-3 control-label">previllage</label>
+				    <div class="col-lg-6">
+				      <input type="text" class="form-control" name="hak" id="hak" placeholder="Previllage">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-lg-offset-3 col-lg-10">
+				      <button type="submit" class="btn btn-success">Save</button> <a href="<?= base_url();?>index.php/admin" class="btn btn-primary">Cancel</a>
+				    </div>
+				  </div>
+				</form>
+			</fieldset>
 			
-			<table id="lihat" class="display">
-				<thead>
-					<tr>
-						<th>
-							NIM
-						</th>
-						<th>
-							NAMA
-						</th>
-						<th>
-							JURUSAN
-						</th>
-						<th>
-							PILIHAN
-						</th>
-					</tr>
-				</thead>
-   				<tbody>
-					<?php 
-						$i = 1 ;
-						foreach ($mhs as $data): 
-					?>
-					<tr>
-					    <td><?php echo $data->nim ?></td>
-					    <td><?php echo $data->nama ?></td>
-					    <td><?php echo $data->jurusan ?></td>
-					    <td>
-					    	<div class="btn-group">
-					    	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> 
-					    	Pilihan
-					    	<span class="caret"></span>
-					    	</button>
-								<ul class="dropdown-menu" role="menu">
-									<li>
-										<a ><?php echo anchor('admin/updateMhs/'.$data->idMhs,"  Edit  ");?></a>
-									</li>
-									<li>
-										<a ><?php echo anchor('admin/delete/'.$data->idMhs,"   Hapus  ");?></a>
-									</li>
-									<li class="disabled">
-										<a href="#">Another action</a>
-									</li>
-									<li class="divider">
-									</li>
-								</ul>	
-							</div>
-					    </td>
-					</tr>
-  					<?php endforeach ?>	
-				</tbody>
-  			</table>
 		</div>
 	</div>
 	<div class="row clearfix">

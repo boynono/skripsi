@@ -2,9 +2,9 @@
 
  class M_admin extends CI_Model {
 	
-	function selectAll($page, $uri) {
+	function selectAll() {
 		//$query=$this->db->query('select * from mahasiswa');
-		$query=$this->db->get('mahasiswa',$page,$uri);
+		$query=$this->db->get('mahasiswa');
 		return $query->result();
 	}
 	
@@ -46,18 +46,28 @@
 		$this->db->delete('mahasiswa',$data);
 	}
 	
-	function cekuser(){
-	        $username = $this->input->post('username');
-	        $password = $this->input->post('password');
-	        $hak = $this->input->post('hak');
-	
-	        $this->db->where('username',$username);
-	        $this->db->where('password',$password);
-	        $this->db->where('hak',$hak);
-	        $query = $this->db->get('member');
-	
-	        return $query->result();
-    	}
+	function lihat_user(){
+		$query=$this->db->get('login');
+		return $query->result();
+	}
+	function add_user(){
+		$idlogin=$this->input->post('idlogin');
+		$username=$this->input->post('username');
+		$password=$this->input->post('password');
+		$hak=$this->input->post('hak');
+		
+		$user=array(
+			'idlogin'=>$idlogin,
+			'username'=>$username,
+			'password'=>$password,
+			'hak'=>$hak
+		);
+		return $this->db->insert('login',$user);
+	}
+	function get_nilai() {
+		$query=$this->db->get('nilai');
+		return $query->result();
+	}
 	 
 }
  

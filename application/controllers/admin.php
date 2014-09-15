@@ -6,18 +6,7 @@
 class Admin extends CI_Controller {
 		
 	public function index() {
-		$row=$this->db->get('mahasiswa');
-		$config['base_url'] = base_url(). 'index.php/admin/index';//page yg dilink kan
-		$config['total_rows'] = $row->num_rows();//ambil jumlah baris
-		$config['per_page'] = 3;//data per page
-		$config['num_links']=4;//jumlah link yg ditampilkan
-			//segmen 1 utk controllers/model;segmen 2 utk fungsi;segmen3 utk ambil nilai dari url
-		$config['uri_segment'] = 3;
-			//insialisasi
-		$this->pagination->initialize($config);
-			//membuat pagination
-		$data['pagination']=$this->pagination->create_links();
-		$data['mhs']=$this->model1->selectAll($config['per_page'],$this->uri->segment(3));
+		$data['mhs']=$this->m_admin->selectAll();
 		$this->load->view('v_admin',$data);	
 	}
 	
@@ -28,9 +17,8 @@ class Admin extends CI_Controller {
 	}
 	
 	function add(){
-		if($_POST==NULL){	
-			$data['judul']= 'tambah data';
-			$this->load->view('tambah',$data);
+		if($_POST==NULL){
+			$this->load->view('tambah');
 		}
 		else{
 			$this->m_admin->add();
@@ -55,5 +43,24 @@ class Admin extends CI_Controller {
 		redirect('admin');
 	}
 	
+	function lihat_user(){
+		$data['user']=$this->m_admin->lihat_user();
+		$this->load->view('v_user',$data);
+	}
+	
+	function add_user(){
+		if($_POST==NULL){
+			$this->load->view('v_tambahuser');
+		}
+		else{
+			
+			$this->m_admin->add_user();
+			redirect('admin','refresh');
+		}
+	}
+	function lihat_nilai(){
+		$data['nilai']=$this->m_admin->get_nilai();
+		$this->load->view('v_nilai',$data);	
+	}
 }	  
 ?>

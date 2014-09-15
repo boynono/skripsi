@@ -1,9 +1,9 @@
 <?php
 
  class M_user extends CI_Model {
-	function selectAll($page, $uri) {
+	function selectAll() {
 		//$query=$this->db->query('select * from mahasiswa');
-		$query=$this->db->get('mahasiswa',$page,$uri);
+		$query=$this->db->get('mahasiswa');
 		return $query->result();
 	}
 	

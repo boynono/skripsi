@@ -127,7 +127,7 @@
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <a><?php echo anchor('admin/add_user',"Tambah Peserta");?></a>
+                                        <a href="#">Tambah Peserta</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -233,7 +233,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a><?php echo anchor('admin/lihat_nilai',"Lihat Nilai");?></a>
+                                        <a href="#">Edit Nilai</a>
                                     </td>
                                 </tr>
                             </table>
@@ -248,13 +248,13 @@
 				<thead>
 					<tr>
 						<th>
-							NIM
+							USERNAME
 						</th>
 						<th>
-							NAMA
+							PASSWORD
 						</th>
 						<th>
-							JURUSAN
+							PREVILLAGE
 						</th>
 						<th>
 							PILIHAN
@@ -264,12 +264,12 @@
    				<tbody>
 					<?php 
 						$i = 1 ;
-						foreach ($mhs as $data): 
+						foreach ($user as $data): 
 					?>
 					<tr>
-					    <td><?php echo $data->nim ?></td>
-					    <td><?php echo $data->nama ?></td>
-					    <td><?php echo $data->jurusan ?></td>
+					    <td><?php echo $data->username ?></td>
+					    <td><?php echo $data->password ?></td>
+					    <td><?php echo $data->hak ?></td>
 					    <td>
 					    	<div class="btn-group">
 					    	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> 
@@ -278,10 +278,10 @@
 					    	</button>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a ><?php echo anchor('admin/updateMhs/'.$data->idMhs,"  Edit  ");?></a>
+										<a ><?php echo anchor('admin/updateMhs/'.$data->idlogin,"  Edit  ");?></a>
 									</li>
 									<li>
-										<a ><?php echo anchor('admin/delete/'.$data->idMhs,"   Hapus  ");?></a>
+										<a ><?php echo anchor('admin/delete/'.$data->idlogin,"   Hapus  ");?></a>
 									</li>
 									<li class="disabled">
 										<a href="#">Another action</a>
