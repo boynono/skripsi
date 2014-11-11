@@ -53,110 +53,188 @@
 	</script>
 </head>
 <body>
-<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<h3>
+<div class="container-full">
+	<!--
+		bagian atas
+	-->
+	<div class="row">
+		<div class="col-md-12">
+			<h1>
 				SISTEM INFORMASI KKNP PTIIK
-			</h3>
-			<nav class="navbar navbar-default" role="navigation">
-				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">HOME</a>
-				</div>
-				
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li>
-							<a href="#">Mahasiswa KKNP</a>
-						</li>
-						<li>
-							<a href="#">Proposal KKNP</a>
-						</li>
-						<li>
-							<a href="#">Tawaran KKNP</a>
-						</li>
-						<li>
-							<a href="#">Dokumen KKNP</a>
-						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jurusan<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								
-								<li>
-									<a href="#">Teknik Informatika</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Teknik Komputer</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Sistem Informasi</a>
-								</li>
-								
-							</ul>
-						</li>
-					</ul>
-					<form class="navbar-form navbar-right" role="search">
-						<div class="form-group">
-							<input class="form-control" type="text" />
-						</div> <button type="submit" class="btn btn-default">Submit</button>
-					</form>
-					
-				</div>
-				
-			</nav>
+			</h1>
+			
 		</div>
 	</div>
-	<div class="row clearfix">
-			
-		<div class="col-md-3 column">
-			<legend>Login</legend>
-				<?php echo form_open('user/cekuser' , 'class="form-horizontal"'); ?>
-					<div class="form-group">
-				    	<label for="username" class="col-lg-3 control-label">Username</label>
-				    	<div class="col-lg-9">
-				      	<input type="text" class="form-control" name="username"  placeholder="username">
-				    	</div>
-				  	</div>		
-				  <div class="form-group">
-				    <label for="password" class="col-lg-3 control-label">Password</label>
-				    <div class="col-lg-9">
-				      <input type="password" class="form-control" name="password"  placeholder="password">
-				    </div>
-				  </div>
-				  
-				  <div class="form-group">
-				    <div class="col-lg-offset-8 col-lg-10">
-				      <button type="submit" class="btn btn-success">Login</button>
-				    </div>
-				  
-				  </div>
-				  
-				<?php echo form_close(); ?>		
+	<!--
+		bagian tengah
+	-->
+	<div class="row">
+		<div class="col-md-3 ">
+			<legend>Halaman Admin</legend>
+			<div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-user">
+                            </span>Login</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                        	<?php echo form_open('c_mahasiswa/cekadmin' , 'class="form-horizontal"'); ?>
+								<div class="form-group">
+								<label for="username" class="col-lg-3 control-label">Username</label>
+									<div class="col-lg-9">
+									  	<input type="text" class="form-control" name="username"  placeholder="username">
+									</div>
+								</div>		
+								<div class="form-group">
+								    <label for="password" class="col-lg-3 control-label">Password</label>
+									    <div class="col-lg-9">
+											<input type="password" class="form-control" name="password"  placeholder="password">
+										 </div>
+								</div>
+								<div class="form-group">
+									<div class="col-lg-offset-8 col-lg-10">
+										<button type="submit" class="btn btn-success">Login</button>
+									</div>
+								</div>
+							<?php echo form_close(); ?>       
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-folder-close">
+                            </span>Mahasiswa KKNP</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('admin',"Informatika/Ilmu Komputer");?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-flash text-success"></span><a ><?php echo anchor('admin/add',"Sistem Informasi");?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-file text-info"></span><a href="#">Sistem Komputer</a>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
+                            </span>Tawaran KKNP</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-usd"></span><a><?php echo anchor('c_mahasiswa/tawarankknp',"Tawaran KKNP");?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-user"></span><a href="#">Buat Surat Tugas Dosen</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-tasks"></span><a href="#">Tambah Pengumuman</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-shopping-cart"></span><a href="#">Feedback</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th">
+                            </span>Kelola Nilai</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <a href="#">Masukkan Nilai</a> <span class="label label-success">$ 320</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a><?php echo anchor('admin/lihat_nilai',"Lihat Nilai");?></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+			</div>
 		</div>
-		<div class="col-md-9 column">
+		
+		<div class="col-md-9">
 			
 			<table id="lihat" class="display">
 				<thead>
 					<tr>
-						<th>NIM</th>
-						<th>NAMA</th>
-						<th>JURUSAN</th>
+						<th>perusahaan</th>
+						<th>alamat</th>
+						<th>tanggal mulai</th>
+						<th>tanggal selesai</th>
+						<th>objek</th>
+						<th>nama mahasiswa</th>
+						<th>dosen pembimbing</th>
+						<th>status</th>
 					</tr>
 				</thead>
 		
    				<tbody>
    					<?php 
 						$i = 1 ;
-						foreach ($mhs as $data): 
+						foreach ($kknp as $data): 
 					?>
+					
+					
 					<tr>
-					    <td><?php echo $data->nim ?></td>
-					    <td><?php echo $data->nama ?></td>
-					    <td><?php echo $data->jurusan ?></td>
+					    <td><?php echo $data->nm_perusahaan ?></td>
+					    <td><?php echo $data->alamat ?></td>
+					    <td><?php echo $data->tanggal_mulai ?></td>
+					    <td><?php echo $data->tanggal_selesai ?></td>
+					    <td><?php echo $data->objek ?></td>
+					    <td>
+					    	<?php 
+					    	$nama = explode(',', $data->nm_mhs);
+					    	foreach ($nama as $nama){
+					    		echo "<span class='label label-info'>".$nama."</span><br><br>";
+					    	}
+					    	?>
+					    </td>
+					    <td><?php echo $data->nm_dosen ?></td>
+					    <td><?php echo $data->keterangan ?></td>
 					    
 					</tr>
 					<?php endforeach ?>
@@ -166,8 +244,8 @@
   				
 		</div>
 	</div>
-	<div class="row clearfix">
-		<div class="col-md-12 column">
+	<div class="row">
+		<div class="col-md-12">
 			<h3>
 				h3. Lorem ipsum dolor sit amet.
 			</h3>

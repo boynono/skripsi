@@ -109,7 +109,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/lihatkknp',"Edit & Hapus KKNP");?></a>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/index',"Edit & Hapus KKNP");?></a>
                                     </td>
                                 </tr>
                             </table>
@@ -255,39 +255,31 @@
 					<tr>
 						<th>perusahaan</th>
 						<th>alamat</th>
+						<th>email</th>
+						<th>kontak</th>
 						<th>tanggal mulai</th>
 						<th>tanggal selesai</th>
 						<th>objek</th>
-						<th>nama mahasiswa</th>
-						<th>dosen pembimbing</th>
-						<th>status</th>
 						<th>pilihan</th>
+						
 					</tr>
 				</thead>
 		
    				<tbody>
    					<?php 
 						$i = 1 ;
-						foreach ($kknp as $data): 
+						foreach ($tawaran as $data): 
 					?>
 					
 					
 					<tr>
 					    <td><?php echo $data->nm_perusahaan ?></td>
 					    <td><?php echo $data->alamat ?></td>
+					    <td><?php echo $data->email ?></td>
+					    <td><?php echo $data->kontak ?></td>
 					    <td><?php echo $data->tanggal_mulai ?></td>
 					    <td><?php echo $data->tanggal_selesai ?></td>
 					    <td><?php echo $data->objek ?></td>
-					    <td>
-					    	<?php 
-					    	$nama = explode(',', $data->nm_mhs);
-					    	foreach ($nama as $nama){
-					    		echo "<span class='label label-info'>".$nama."</span><br><br>";
-					    	}
-					    	?>
-					    </td>
-					    <td><?php echo $data->nm_dosen ?></td>
-					    <td><?php echo $data->keterangan ?></td>
 					    <td>
 					    	<div class="btn-group">
 					    	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> 
@@ -296,10 +288,10 @@
 					    	</button>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a ><?php echo anchor('c_admin/editkknp/'.$data->id_kknp,"  Edit  ");?></a>
+										<a ><?php echo anchor('c_admin/edittawaran/'.$data->id_tawaran,"  Edit  ");?></a>
 									</li>
 									<li>
-										<a ><?php echo anchor('c_admin/hapuskknp/'.$data->id_kknp,"   Hapus  ");?></a>
+										<a ><?php echo anchor('c_admin/hapustawaran/'.$data->id_tawaran,"   Hapus  ");?></a>
 									</li>
 									<li class="disabled">
 										<a href="#">Another action</a>

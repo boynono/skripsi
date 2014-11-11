@@ -109,7 +109,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/lihatkknp',"Edit & Hapus KKNP");?></a>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/index',"Edit & Hapus KKNP");?></a>
                                     </td>
                                 </tr>
                             </table>
@@ -135,7 +135,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/lihattawaran',"Edit & Hapus Tawaran KKNP");?></a>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_tawaran',"Edit & Hapus Tawaran KKNP");?></a>
                                     </td>
                                 </tr>
                             </table>
@@ -160,7 +160,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/lihatpengajuan',"Edit & Hapus Pengajuan");?></a>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_pengajuan',"Edit & Hapus Pengajuan");?></a>
                                     </td>
                                 </tr>
                             </table>
@@ -172,7 +172,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-file">
-                            </span>Daftar Mahasiswa</a>
+                            </span>Mahasiswa KKNP</a>
                         </h4>
                     </div>
                     <div id="collapseFive" class="panel-collapse collapse">
@@ -180,12 +180,12 @@
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahmahasiswa',"Tambah Mahasiswa KKNP");?></a>
+                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahmhs',"Tambah Mahasiswa KKNP");?></a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/lihatmahasiswa',"Edit & Hapus Mahasiswa");?></a>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_mhs',"Edit & Hapus Mahasiswa");?></a>
                                     </td>
                                 </tr>
                             </table>
@@ -210,7 +210,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/lihatperusahaan',"Edit & Hapus Perusahaan");?></a>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_perusahaan',"Edit & Hapus Perusahaan");?></a>
                                     </td>
                                 </tr>
                             </table>
@@ -235,7 +235,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/lihatdosen',"Edit & Hapus Dosen");?></a>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_dosen',"Edit & Hapus Dosen");?></a>
                                     </td>
                                 </tr>
                             </table>
@@ -253,14 +253,10 @@
 			<table id="lihat" class="display">
 				<thead>
 					<tr>
-						<th>perusahaan</th>
+						<th>nama perusahaan</th>
 						<th>alamat</th>
-						<th>tanggal mulai</th>
-						<th>tanggal selesai</th>
-						<th>objek</th>
-						<th>nama mahasiswa</th>
-						<th>dosen pembimbing</th>
-						<th>status</th>
+						<th>email</th>
+						<th>kontak</th>
 						<th>pilihan</th>
 					</tr>
 				</thead>
@@ -268,26 +264,16 @@
    				<tbody>
    					<?php 
 						$i = 1 ;
-						foreach ($kknp as $data): 
+						foreach ($perusahaan as $data): 
 					?>
 					
 					
 					<tr>
+					    <!-- <td><?php echo $data->id_perusahaan ?></td> -->
 					    <td><?php echo $data->nm_perusahaan ?></td>
 					    <td><?php echo $data->alamat ?></td>
-					    <td><?php echo $data->tanggal_mulai ?></td>
-					    <td><?php echo $data->tanggal_selesai ?></td>
-					    <td><?php echo $data->objek ?></td>
-					    <td>
-					    	<?php 
-					    	$nama = explode(',', $data->nm_mhs);
-					    	foreach ($nama as $nama){
-					    		echo "<span class='label label-info'>".$nama."</span><br><br>";
-					    	}
-					    	?>
-					    </td>
-					    <td><?php echo $data->nm_dosen ?></td>
-					    <td><?php echo $data->keterangan ?></td>
+					    <td><?php echo $data->email ?></td>
+					    <td><?php echo $data->kontak ?></td>
 					    <td>
 					    	<div class="btn-group">
 					    	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> 
@@ -296,10 +282,10 @@
 					    	</button>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a ><?php echo anchor('c_admin/editkknp/'.$data->id_kknp,"  Edit  ");?></a>
+										<a ><?php echo anchor('c_admin/editperusahaan/'.$data->id_perusahaan,"  Edit  ");?></a>
 									</li>
 									<li>
-										<a ><?php echo anchor('c_admin/hapuskknp/'.$data->id_kknp,"   Hapus  ");?></a>
+										<a ><?php echo anchor('c_admin/hapusperusahaan/'.$data->id_perusahaan,"   Hapus  ");?></a>
 									</li>
 									<li class="disabled">
 										<a href="#">Another action</a>

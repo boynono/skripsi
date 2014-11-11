@@ -109,7 +109,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/lihatkknp',"Edit & Hapus KKNP");?></a>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/index',"Edit & Hapus KKNP");?></a>
                                     </td>
                                 </tr>
                             </table>
@@ -258,9 +258,6 @@
 						<th>tanggal mulai</th>
 						<th>tanggal selesai</th>
 						<th>objek</th>
-						<th>nama mahasiswa</th>
-						<th>dosen pembimbing</th>
-						<th>status</th>
 						<th>pilihan</th>
 					</tr>
 				</thead>
@@ -268,7 +265,7 @@
    				<tbody>
    					<?php 
 						$i = 1 ;
-						foreach ($kknp as $data): 
+						foreach ($pengajuan as $data): 
 					?>
 					
 					
@@ -279,16 +276,6 @@
 					    <td><?php echo $data->tanggal_selesai ?></td>
 					    <td><?php echo $data->objek ?></td>
 					    <td>
-					    	<?php 
-					    	$nama = explode(',', $data->nm_mhs);
-					    	foreach ($nama as $nama){
-					    		echo "<span class='label label-info'>".$nama."</span><br><br>";
-					    	}
-					    	?>
-					    </td>
-					    <td><?php echo $data->nm_dosen ?></td>
-					    <td><?php echo $data->keterangan ?></td>
-					    <td>
 					    	<div class="btn-group">
 					    	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> 
 					    	Pilihan
@@ -296,10 +283,10 @@
 					    	</button>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a ><?php echo anchor('c_admin/editkknp/'.$data->id_kknp,"  Edit  ");?></a>
+										<a ><?php echo anchor('c_admin/editpengajuan/'.$data->id_pengajuan,"  Edit  ");?></a>
 									</li>
 									<li>
-										<a ><?php echo anchor('c_admin/hapuskknp/'.$data->id_kknp,"   Hapus  ");?></a>
+										<a ><?php echo anchor('c_admin/hapuspengajuan/'.$data->id_pengajuan,"   Hapus  ");?></a>
 									</li>
 									<li class="disabled">
 										<a href="#">Another action</a>

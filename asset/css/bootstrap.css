@@ -7057,3 +7057,9 @@ td.visible-print {
     display: none !important;
   }
 }
+.container-full {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+  width: 100%;
+}

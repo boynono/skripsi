@@ -53,73 +53,50 @@
 	</script>
 </head>
 <body>
-<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<h3>
+<div class="container-full">
+	<!--
+		bagian atas
+	-->
+	<div class="row">
+		<div class="col-md-12">
+			<h1>
 				SISTEM INFORMASI KKNP PTIIK
-			</h3>
-			<nav class="navbar navbar-default" role="navigation">
-				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">HOME</a>
-				</div>
-				
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li>
-							<a href="#">Mahasiswa KKNP</a>
-						</li>
-						<li>
-							<a href="#">Proposal KKNP</a>
-						</li>
-						<li>
-							<a href="#">Tawaran KKNP</a>
-						</li>
-						<li>
-							<a href="#">Dokumen KKNP</a>
-						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jurusan<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								
-								<li>
-									<a href="#">Teknik Informatika</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Teknik Komputer</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Sistem Informasi</a>
-								</li>
-								
-							</ul>
-						</li>
-					</ul>
-					<form class="navbar-form navbar-right" role="search">
-						<div class="form-group">
-							<input class="form-control" type="text" />
-						</div> <button type="submit" class="btn btn-default">Submit</button>
-					</form>
-					
-				</div>
-				
-			</nav>
+			</h1>
+			
 		</div>
 	</div>
-	<div class="row clearfix">
-				
-		<div class="col-md-3 column">
+	<!--
+		bagian tengah
+	-->
+	<div class="row">
+		<div class="col-md-3 ">
 			<legend>Halaman Admin</legend>
 			<div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-user">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-user">
                             </span>Account</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table class="table">
+		                        <tr>
+			                        <td>
+			                            <span class="glyphicon glyphicon-trash"></span>
+			                            <?php echo anchor('c_admin/logout'," keluar ");?>
+			                        </td>
+		                        </tr>        
+                    		</table>
+                    	</div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-folder-close">
+                            </span>KKNP</a>
                         </h4>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
@@ -127,53 +104,12 @@
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <a href="#">Tambah Peserta</a>
+                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahkknp',"Tambah KKNP");?></a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="#">Daftar Peserta</a> <span class="label label-info">5</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                        <?php echo anchor('admin/logout'," keluar ");?>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-folder-close">
-                            </span>Data KKNP</a>
-                        </h4>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('admin',"Lihat Peserta KKNP");?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-flash text-success"></span><a ><?php echo anchor('admin/add',"Tambah Data KKNP");?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-file text-info"></span><a href="#">Pengajuan</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-comment text-success"></span><a href="#">Comments</a>
-                                        <span class="badge">42</span>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/index',"Edit & Hapus KKNP");?></a>
                                     </td>
                                 </tr>
                             </table>
@@ -186,7 +122,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
-                            </span>Dokumen</a>
+                            </span>Tawaran KKNP</a>
                         </h4>
                     </div>
                     <div id="collapseFour" class="panel-collapse collapse">
@@ -194,33 +130,24 @@
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-usd"></span><a href="#">Buat Surat Pengantar</a>
+                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahtawaran',"Tambah Tawaran KKNP");?></a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-user"></span><a href="#">Buat Surat Tugas Dosen</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-tasks"></span><a href="#">Tambah Pengumuman</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-shopping-cart"></span><a href="#">Feedback</a>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_tawaran',"Edit & Hapus Tawaran KKNP");?></a>
                                     </td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                 </div>
+                
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th">
-                            </span>Kelola Nilai</a>
+                            </span>Pengajuan Perusahaan</a>
                         </h4>
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
@@ -228,120 +155,145 @@
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <a href="#">Masukkan Nilai</a> <span class="label label-success">$ 320</span>
+                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahpengajuan',"Tambah Pengajuan");?></a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="#">Edit Nilai</a>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_pengajuan',"Edit & Hapus Pengajuan");?></a>
                                     </td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                 </div>
-            </div>
-			<nav class="navbar navbar-default" role="navigation">
-				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Admin</a>
-				</div>
-				
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li>
-							<a><?php echo anchor('admin/add',"  tambah data  ");?></a>
-						</li>
-						<li>
-							<a><?php echo anchor('admin/logout'," keluar ");?></a>
-						</li>
-					</ul>	
-				</div>
-				
-				<div class="panel panel-faq">
-				    <div class="panel-heading">
-				        <h4 class="panel-title">
-				            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_2">
-				                1. Some title goes here
-				            </a>
-				        </h4>
-				    </div>
-				    <div id="accordion1_2" class="panel-collapse collapse">
-				        <div class="panel-body">
-				                sample entry text goes here
-				        </div>
-				    </div>
-				</div>
-			</nav>
-			
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">
-						<?php echo anchor('admin/logout'," </br> keluar <br> ");?>
-					</h3>
-				</div>
-				<div class="panel-body">
-					<?php echo anchor('admin/add'," </br> tambah data <br> ");?>
-				</div>
-				<div class="panel-footer">
-					<?php echo anchor('admin','lihat data');?>
-				</div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-file">
+                            </span>Mahasiswa KKNP</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahmhs',"Tambah Mahasiswa KKNP");?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_mhs',"Edit & Hapus Mahasiswa");?></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix"><span class="glyphicon glyphicon-file">
+                            </span>Perusahaan</a>
+                        </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahperusahaan',"Tambah Perusahaan");?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_perusahaan',"Edit & Hapus Perusahaan");?></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven"><span class="glyphicon glyphicon-file">
+                            </span>Dosen Pembimbing</a>
+                        </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahdosen',"Tambah Dosen");?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_dosen',"Edit & Hapus Dosen");?></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+              <!-- batas menu -->  
 			</div>
 			
-			<div class="list-group">
-				 <a href="#" class="list-group-item active">Home</a>
-				<div class="list-group-item">
-					List header
-				</div>
-				<div class="list-group-item">
-					<h4 class="list-group-item-heading">
-						List group item heading
-					</h4>
-					<p class="list-group-item-text">
-						...
-					</p>
-				</div>
-				<div class="list-group-item">
-					<span class="badge">14</span>Help
-				</div> <a class="list-group-item active"><span class="badge">14</span>Help</a>
-			</div>
 		</div>
 		<div class="col-md-9 column">
 			<legend>edit peserta</legend>
-				<?php echo form_open('admin/updateMhs/'.$hasil->idMhs , 'class="form-horizontal"'); ?>
+				<?php echo form_open('c_admin/editperusahaan/'.$hasil->id_perusahaan , 'class="form-horizontal"'); ?>
 					<div class="form-group">
 				    	<label for="nim" class="col-lg-3 control-label">NIM</label>
 				    	<div class="col-lg-6">
-				      	<input type="text" class="form-control" name="nim" value="<?php echo $hasil->nim; ?>" placeholder="Nim Mahasiswa">
+				      	<input type="text" class="form-control" name="nm_perusahaan" value="<?php echo $hasil->nm_perusahaan; ?>" placeholder="Nim Mahasiswa">
 				    	</div>
 				  	</div>		
 				  <div class="form-group">
 				    <label for="nama" class="col-lg-3 control-label">NAMA</label>
 				    <div class="col-lg-6">
-				      <input type="text" class="form-control" name="nama" value="<?php echo $hasil->nama; ?>" placeholder="Nama Mahasiswa">
+				      <input type="text" class="form-control" name="alamat" value="<?php echo $hasil->alamat; ?>" placeholder="Nama Mahasiswa">
 				    </div>
 				  </div>
 				  <div class="form-group">
 				    <label for="jurusan" class="col-lg-3 control-label">Jurusan</label>
 				    <div class="col-lg-6">
-				      <input type="text" class="form-control" name="jurusan" value="<?php echo $hasil->jurusan; ?>" placeholder="Jurusan">
+				      <input type="text" class="form-control" name="email" value="<?php echo $hasil->email; ?>" placeholder="Jurusan">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="jurusan" class="col-lg-3 control-label">Jurusan</label>
+				    <div class="col-lg-6">
+				      <input type="text" class="form-control" name="kontak" value="<?php echo $hasil->kontak; ?>" placeholder="Jurusan">
 				    </div>
 				  </div>
 				  <div class="form-group">
 				    <div class="col-lg-offset-3 col-lg-10">
-				      <button type="submit" class="btn btn-success">Save</button> <a href="<?= base_url();?>index.php/admin" class="btn btn-primary">Cancel</a>
+				      <button type="submit" class="btn btn-success">Save</button> <a href="<?= base_url();?>index.php/c_admin" class="btn btn-primary">Cancel</a>
 				    </div>
 				  </div>
 				  
 				<?php echo form_close(); ?>  
-		</div>
+		</div>		
 	</div>
-	<div class="row clearfix">
-		<div class="col-md-12 column">
+	<div class="row">
+		<div class="col-md-12">
 			<h3>
-				BAGIAN BAWAH
+				h3. Lorem ipsum dolor sit amet.
 			</h3>
 		</div>
 	</div>
 </div> 
 </body>
+
 </html>
+		
+	
+
