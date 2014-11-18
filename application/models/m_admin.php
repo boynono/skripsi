@@ -3,12 +3,15 @@
  class M_admin extends CI_Model {
 //==========================KKNP===================		
 	function kknp() {
-		$sql = "SELECT kknp.id_kknp, 
+		$sql = "
+				SELECT kknp.id_kknp, 
 				perusahaan.nm_perusahaan, 
 				perusahaan.alamat, 
-				pengajuan_kknp.objek, 
-				pengajuan_kknp.tanggal_mulai, 
-				pengajuan_kknp.tanggal_selesai, 
+				pengajuan_kknp.objek,
+                CONCAT(
+				pengajuan_kknp.tanggal_mulai,',', 
+				pengajuan_kknp.tanggal_selesai
+                ) as tgl, 
 				dosen.nm_dosen, status.keterangan, 
 				GROUP_CONCAT(mahasiswa.nm_mhs) as nm_mhs, 
 				jurusan.nm_jurusan 
@@ -19,12 +22,40 @@
 				LEFT JOIN jurusan ON jurusan.id_jurusan = mahasiswa.id_jurusan 
 				LEFT JOIN dosen ON dosen.id_dosen = kknp.id_dosen 
 				LEFT JOIN status ON status.id_status = kknp.id_status 
-				GROUP BY pengajuan_kknp.id_pengajuan, status.keterangan 
-			   ";
-		
+				GROUP BY pengajuan_kknp.id_pengajuan, status.keterangan
+				";
 		$query=$this->db->query($sql);
 		return $query->result();
 	}
+	// function kknp2($id_kknp){
+			// $query=$this->db->query('
+				// SELECT kknp.id_kknp, 
+				// mahasiswa.nim,
+				// mahasiswa.nm_mhs, 
+				// jurusan.nm_jurusan,
+				// perusahaan.nm_perusahaan, 
+				// perusahaan.alamat as p_alamat,
+				// perusahaan.email as p_email,
+				// perusahaan.kontak as p_kontak, 
+				// pengajuan_kknp.objek,
+				// pengajuan_kknp.tanggal_mulai, 
+				// pengajuan_kknp.tanggal_selesai,
+                // dosen.nm_dosen, 
+				// dosen.email,
+				// dosen.kontak,
+				// status.keterangan 
+// 				 
+				// FROM kknp 
+				// LEFT JOIN pengajuan_kknp ON pengajuan_kknp.id_pengajuan = kknp.id_pengajuan 
+				// LEFT JOIN perusahaan ON perusahaan.id_perusahaan = pengajuan_kknp.id_perusahaan 
+				// LEFT JOIN mahasiswa ON mahasiswa.nim = kknp.nim 
+				// LEFT JOIN jurusan ON jurusan.id_jurusan = mahasiswa.id_jurusan 
+				// LEFT JOIN dosen ON dosen.id_dosen = kknp.id_dosen 
+				// LEFT JOIN status ON status.id_status = kknp.id_status 
+				// WHERE id_kknp="'.$id_kknp.'"
+			// ');
+			// return $query->result();
+	// }
 	function lihatkknp() {
 		$sql = "SELECT kknp.id_kknp, 
 				perusahaan.nm_perusahaan,

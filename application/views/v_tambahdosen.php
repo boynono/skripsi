@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -6,46 +7,23 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-	<!--link rel="stylesheet/less" href="asset/less/bootstrap.less" type="text/css" /-->
-	<!--link rel="stylesheet/less" href="asset/less/responsive.less" type="text/css" /-->
-	<!--script src="js/less-1.3.3.min.js"></script-->
-	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
-	
-	<link href="<?php echo base_url();?>asset/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<!-- GLOBAL -->
+	<link href="<?php echo base_url();?>asset/css/2bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="<?php echo base_url();?>asset/css/bootstrap.css" rel="stylesheet" type="text/css">
-	<link href="<?php echo base_url();?>asset/css/style.css" rel="stylesheet" type="text/css">
-	<link href="<?php echo base_url();?>asset/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
-
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-    <script src="asset/js/html5shiv.js"></script>
-  <![endif]-->
-
-  <!-- Fav and touch icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="asset/img/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="asset/img/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="asset/img/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="asset/img/apple-touch-icon-57-precomposed.png">
-  <link rel="shortcut icon" href="asset/img/favicon.png">
+	<link href="<?php echo base_url();?>asset/css/sb-admin.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url();?>asset/css/tambahan.css" rel="stylesheet" type="text/css">
   
-	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>asset/js/dataTables.bootstrap.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>asset/js/scripts.js"></script>
+  
 	
 	<!-- DataTables CSS -->
-<!--<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.2/css/jquery.dataTables.css">-->
-<link href="<?php echo base_url();?>asset/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
-  
-<!-- jQuery -->
-<!--<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery-1.10.2.min.js"></script>
--->	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery-1.11.1.min.js"></script>
+	<link href="<?php echo base_url();?>asset/css/2dataTables.bootstrap.css" rel="stylesheet" type="text/css">
 	  
-<!-- DataTables -->
-<!--<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.dataTables.js"></script>		
--->	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.dataTables.min.js"></script>		
+	<!-- DataTables Jquery -->
+	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>asset/js/2jquery.dataTables.min.js"></script>		
+	<script type="text/javascript" src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>asset/js/2dataTables.bootstrap.js"></script>
+	  
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#lihat').DataTable();
@@ -53,249 +31,181 @@
 	</script>
 </head>
 <body>
-<div class="container-full">
-	<!--
-		bagian atas
-	-->
-	<div class="row">
-		<div class="col-md-12">
-			<h1>
-				SISTEM INFORMASI KKNP PTIIK
-			</h1>
-			
-		</div>
-	</div>
-	<!--
-		bagian tengah
-	-->
-	<div class="row">
-		<div class="col-md-3 ">
-			<legend>Halaman Admin</legend>
-			<div class="panel-group" id="accordion">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-user">
-                            </span>Account</a>
-                        </h4>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            <table class="table">
-		                        <tr>
-			                        <td>
-			                            <span class="glyphicon glyphicon-trash"></span>
-			                            <?php echo anchor('c_admin/logout'," keluar ");?>
-			                        </td>
-		                        </tr>        
-                    		</table>
-                    	</div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-folder-close">
-                            </span>KKNP</a>
-                        </h4>
-                    </div>
-                    <div id="collapseThree" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahkknp',"Tambah KKNP");?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/index',"Edit & Hapus KKNP");?></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
-                            </span>Tawaran KKNP</a>
-                        </h4>
-                    </div>
-                    <div id="collapseFour" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahtawaran',"Tambah Tawaran KKNP");?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_tawaran',"Edit & Hapus Tawaran KKNP");?></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th">
-                            </span>Pengajuan Perusahaan</a>
-                        </h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahpengajuan',"Tambah Pengajuan");?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_pengajuan',"Edit & Hapus Pengajuan");?></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-file">
-                            </span>Mahasiswa KKNP</a>
-                        </h4>
-                    </div>
-                    <div id="collapseFive" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahmhs',"Tambah Mahasiswa KKNP");?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_mhs',"Edit & Hapus Mahasiswa");?></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+	<div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"><img class="tengah" height="20px" src="<?php echo base_url();?>asset/gambar/ptiik_full.png" /></a>
+            </div>
+            <!-- Top Menu Items -->
+            
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                    	<a href="<?php echo site_url('c_admin'); ?>"><i class="glyphicon glyphicon-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="glyphicon glyphicon-file"></i> Data KKNP  <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <ul id="demo1" class="collapse">
+                            <li>
+                                <a href="<?php echo site_url('c_admin/tambahkknp'); ?>"><i class="glyphicon glyphicon-info"></i> Tambah KKNP</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo site_url('c_admin/lihatkknp'); ?>"><i class="glyphicon glyphicon-info"></i> Lihat & Edit KKNP</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="glyphicon glyphicon-file"></i> Tawaran KKNP  <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <ul id="demo2" class="collapse">
+                            <li>
+                                <a href="<?php echo site_url('c_admin/tambahtawaran'); ?>"><i class="glyphicon glyphicon-info"></i> Tambah Tawaran</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo site_url('c_admin/lihattawaran'); ?>"><i class="glyphicon glyphicon-info"></i> Lihat & Edit Tawaran</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="glyphicon glyphicon-file"></i> Pengajuan Perusahaan  <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <ul id="demo3" class="collapse">
+                            <li>
+                                <a href="<?php echo site_url('c_admin/tambahpengajuan'); ?>"><i class="glyphicon glyphicon-info"></i> Tambah Pengajuan</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo site_url('c_admin/lihatpengajuan'); ?>"><i class="glyphicon glyphicon-info"></i> Lihat & Edit Pengajuan</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="glyphicon glyphicon-file"></i> Daftar Mahasiswa  <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <ul id="demo4" class="collapse">
+                            <li>
+                                <a href="<?php echo site_url('c_admin/tambahmahasiswa'); ?>"><i class="glyphicon glyphicon-info"></i> Tambah Mahasiswa</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo site_url('c_admin/lihatmahasiswa'); ?>"><i class="glyphicon glyphicon-info"></i> Lihat & Edit Mahasiswa</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo5"><i class="glyphicon glyphicon-file"></i> Data Perusahaan  <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <ul id="demo5" class="collapse">
+                            <li>
+                                <a href="<?php echo site_url('c_admin/tambahperusahaan'); ?>"><i class="glyphicon glyphicon-info"></i> Tambah Perusahaan</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo site_url('c_admin/lihatperusahaan'); ?>"><i class="glyphicon glyphicon-info"></i> Lihat & Edit Perusahaan</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo6"><i class="glyphicon glyphicon-file"></i> Dosen Pembimbing  <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <ul id="demo6" class="collapse">
+                            <li>
+                                <a href="<?php echo site_url('c_admin/tambahdosen'); ?>"><i class="glyphicon glyphicon-info"></i> Tambah Dosen</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo site_url('c_admin/lihatdosen'); ?>"><i class="glyphicon glyphicon-info"></i> Lihat & Edit Dosen</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo7"><i class="glyphicon glyphicon-user"></i> Admin  <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <ul id="demo7" class="collapse">
+                            <li>
+                                <a href="<?php echo site_url('c_admin/logout'); ?>"><i class="glyphicon glyphicon-trash"></i> Keluar</a>
+                            </li>
+                        </ul>
+                    </li>
+            	</ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            <img class="tengah" src="<?php echo base_url();?>asset/gambar/kknp2.png" />
+                        </h1>
+                        
                     </div>
                 </div>
-                
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix"><span class="glyphicon glyphicon-file">
-                            </span>Perusahaan</a>
-                        </h4>
-                    </div>
-                    <div id="collapseSix" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahperusahaan',"Tambah Perusahaan");?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_perusahaan',"Edit & Hapus Perusahaan");?></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+                <!-- /.row -->
+				<div class="row">
+                    <div class="col-lg-11">
+	                    <fieldset>
+							<form class="form-horizontal" role="form" action='<?= base_url();?>index.php/c_admin/tambahdosen' method="post">
+							 <div class="form-group">
+							    <label for="id pengajuan" class="col-lg-3 control-label">NIP Dosen</label>
+							    <div class="col-lg-6">
+							      <input type="text" class="form-control" name="id_dosen" id="id_dosen" placeholder="Masukkan Nama Perusahaan">
+							    </div>
+							 </div>
+							 <div class="form-group">
+							    <label for="nim mahasiswa" class="col-lg-3 control-label">Nama Dosen</label>
+							    <div class="col-lg-6">
+							      <input type="text" class="form-control" name="nm_dosen" id="nm_dosen" placeholder="Masukkan NIM">
+							    </div>
+							 </div>
+							 <div class="form-group">
+							    <label for="id dosen" class="col-lg-3 control-label">Alamat E-Mail</label>
+							    <div class="col-lg-6">
+							      <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan ID Dosen">
+							    </div>
+							 </div>
+							 <div class="form-group">
+							    <label for="id status" class="col-lg-3 control-label">Kontak</label>
+							    <div class="col-lg-6">
+							      <input type="text" class="form-control" name="kontak" id="kontak" placeholder="Masukkan ID Status">
+							    </div>
+							 </div> 	
+							 <div class="form-group">
+							    <div class="col-lg-offset-3 col-lg-10">
+							      <button type="submit" class="btn btn-success">Save</button> <a href="<?= base_url();?>index.php/c_admin" class="btn btn-primary">Cancel</a>
+							    </div>
+							 </div>
+							</form>
+						</fieldset>
                     </div>
                 </div>
                 
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven"><span class="glyphicon glyphicon-file">
-                            </span>Dosen Pembimbing</a>
-                        </h4>
-                    </div>
-                    <div id="collapseSeven" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a><?php echo anchor('c_admin/tambahdosen',"Tambah Dosen");?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-success"></span><a ><?php echo anchor('c_admin/v_dosen',"Edit & Hapus Dosen");?></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                
-              <!-- batas menu -->  
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+		<!-- <div class="row bawah">
+			<div class="col-md-12">
+				<footer class="footer">
+				<h3>
+					h3. Lorem ipsum dolor sit amet.
+				</h3>
+				</footer>
 			</div>
-			
-		</div>
-		
-		<div class="col-md-9 column">
-			<fieldset>
-    		<legend>Tambah Data Perusahaan</legend>
-				<form class="form-horizontal" role="form" action='<?= base_url();?>index.php/c_admin/tambahdosen' method="post">
-				 <div class="form-group">
-				    <label for="id pengajuan" class="col-lg-3 control-label">NIP Dosen</label>
-				    <div class="col-lg-6">
-				      <input type="text" class="form-control" name="id_dosen" id="id_dosen" placeholder="Masukkan Nama Perusahaan">
-				    </div>
-				 </div>
-				 <div class="form-group">
-				    <label for="nim mahasiswa" class="col-lg-3 control-label">Nama Dosen</label>
-				    <div class="col-lg-6">
-				      <input type="text" class="form-control" name="nm_dosen" id="nm_dosen" placeholder="Masukkan NIM">
-				    </div>
-				 </div>
-				 <div class="form-group">
-				    <label for="id dosen" class="col-lg-3 control-label">Alamat E-Mail</label>
-				    <div class="col-lg-6">
-				      <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan ID Dosen">
-				    </div>
-				 </div>
-				 <div class="form-group">
-				    <label for="id status" class="col-lg-3 control-label">Kontak</label>
-				    <div class="col-lg-6">
-				      <input type="text" class="form-control" name="kontak" id="kontak" placeholder="Masukkan ID Status">
-				    </div>
-				 </div> 	
-				 <div class="form-group">
-				    <div class="col-lg-offset-3 col-lg-10">
-				      <button type="submit" class="btn btn-success">Save</button> <a href="<?= base_url();?>index.php/c_admin" class="btn btn-primary">Cancel</a>
-				    </div>
-				 </div>
-				</form>
-			</fieldset>
-			
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h3>
-				h3. Lorem ipsum dolor sit amet.
-			</h3>
-		</div>
-	</div>
-</div> 
+		</div> -->
+    </div>
+    <!-- /#wrapper -->
+
+	
+	
+
 </body>
 
 </html>
-		
-	

@@ -24,7 +24,6 @@
 	<script type="text/javascript" src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>asset/js/2dataTables.bootstrap.js"></script>
 	  
-
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#lihat').DataTable();
@@ -92,21 +91,21 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="glyphicon glyphicon-user"></i> Login Admin  <i class="glyphicon glyphicon-chevron-down"></i></a>
                         <ul id="demo3" class="collapse">
                             <li>
-                                <?php echo form_open('c_mahasiswa/cekadmin' , 'class="form-horizontal"'); ?>
+                                <?php echo form_open('c_mahasiswa/cekadmin' , 'class="form-inline"'); ?>
 								<div class="form-group">
 								<label class="col-lg-2 control-label">User<br></label>
-									<div class="col-lg-6">
+									<div class="col-lg-9">
 									  	<input type="text" class="form-control" name="username"  placeholder="username">
 									</div>
 								</div>		
 								<div class="form-group">
 								    <label class="col-lg-2 control-label">Pass<br></label>
-									    <div class="col-lg-6">
+									    <div class="col-lg-9">
 											<input type="password" class="form-control" name="password"  placeholder="password">
 										 </div>
 								</div>
 								<div class="form-group">
-									<div class="col-lg-offset-2 col-lg-4">
+									<div class="col-lg-offset-6 col-lg-10">
 										<button type="submit" class="btn btn-success">Login</button>
 									</div>
 								</div>
@@ -130,78 +129,99 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             <img class="tengah" src="<?php echo base_url();?>asset/gambar/kknp2.png" />
-                            <br />
-                            <small><?php echo $judul;?></small>
                         </h1>
                         
                     </div>
                 </div>
                 <!-- /.row -->
 				<div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                     	<div class="table-responsive">
                         <table id="lihat" class="display table table-striped table-bordered" width="100%">
-							<thead>
-								<tr>
-									<th>Perusahaan</th>
-									<th>Alamat</th>
-									<th>Waktu</th>
-									<!-- <th>tanggal selesai</th>
-									 -->
-									<th>Objek</th>
-									<th>Mahasiswa</th>
-									<th>Dosen Pembimbing</th>
-									<th>Status</th>
-									<th>Pilihan</th>
-								</tr>
-							</thead>
-					
-			   				<tbody>
+							<tbody>
 			   					<?php 
 									$i = 1 ;
-									foreach ($kknp as $data): 
+									foreach ($detailkknp as $data): 
 								?>
-								
-								
-								<tr>
-								    <td><b><?php echo $data->nm_perusahaan ?></b></td>
-								    <td><?php echo $data->alamat ?></td>
-								    <!-- <td><?php echo $data->tgl ?></td>
-								     -->
-								    <!-- <td><?php echo date("d M Y",strtotime($data->tanggal_mulai)); ?></td>
-								    <td><?php echo date("d M Y",strtotime($data->tgl)); ?></td>
-								    -->
-								    <td>
+									<thead>
+										<th>NIM</th>
+										<td>
+								    	<?php 
+								    	$nim = explode(',', $data->nim);
+								    	foreach ($nim as $nim){
+								    		echo "<span class='label label-info'>".$nim."</span><br><br>";
+								    	}
+								    	?></td>
+								    </tr>
+								    <tr>
+								    	<th>Nama Mahasiswa</th>
+								    	<td>
+								    	<?php 
+								    	$nama = explode(',', $data->nm_mhs);
+								    	foreach ($nama as $nama){
+								    		echo "<span class='label label-info'>".$nama."</span><br><br>";
+								    	}
+								    	?></td>
+								    </tr>
+								    <tr>
+								    	<th>Jurusan</th>
+								    	<td><?php echo $data->nm_jurusan ?></td>
+								    </tr>
+								    <tr>
+								    	<th>Perusahaan</th>
+								    	<td><?php echo $data->nm_perusahaan ?></td>
+								    </tr>
+								    <tr>
+								    	<th>Alamat</th>
+								    	<td><?php echo $data->p_alamat ?></td>
+								    </tr>
+								    <tr>
+								    	<th>Email</th>
+								    	<td><?php echo $data->p_email ?></td>
+								    </tr>
+								    <tr>
+								    	<th>Kontak</th>
+								    	<td><?php echo $data->p_kontak ?></td>
+								    </tr>
+								    <tr>
+								    	<th>Objek</th>
+								    	<td>
+								    	<?php 
+								    	$objk = explode(',', $data->objek);
+								    	foreach ($objk as $objk){
+								    		echo "<span class='label label-info'>".$objk."</span><br><br>";
+								    	}
+								    	?></td>
+								    </tr>
+								    <tr>
+								    	<th>Pengerjaan</th>
+								    	<td>
 								    	<?php 
 								    	$tgl = explode(',', $data->tgl);
 								    	foreach ($tgl as $tgl){
 								    		//echo "<span class='label label-info'>".$tgl."</span><br><br>";
 											echo date("d M Y -",strtotime($tgl));
 								    	}
-								    	?>
-								    </td>
-								    <td>
-								    	<?php 
-								    	$objk = explode(',', $data->objek);
-								    	foreach ($objk as $objk){
-								    		echo "<span class='label label-info'>".$objk."</span><br><br>";
-								    	}
-								    	?>
-								    </td>
-								    <td>
-								    	<?php 
-								    	$nama = explode(',', $data->nm_mhs);
-								    	foreach ($nama as $nama){
-								    		echo "<span class='label label-info'>".$nama."</span><br><br>";
-								    	}
-								    	?>
-								    </td>
-								    <td><?php echo $data->nm_dosen ?></td>
-								    <td><?php echo $data->keterangan ?></td>
-								    <td>
-								    	<a href="<?php echo site_url('c_mahasiswa/detailkknp/'.$data->id_kknp); ?>"><button class="button">Detail</button></a>
-								  	</td>
-								</tr>
+								    	?></td>
+								    </tr>
+								    <tr>
+								    	<th>Dosen Pembimbing</th>
+								    	<td><?php echo $data->nm_dosen ?></td>
+								    </tr>
+								    <tr>
+								    	<th>Email</th>
+								    	<td><?php echo $data->email ?></td>
+								    </tr>
+								    <tr>
+								    	<th>Kontak</th>
+								    	<td><?php echo $data->kontak ?></td>
+								    </tr>
+								    <tr>
+								    	<th>Status</th>
+								    	<td><?php echo $data->keterangan ?></td>
+								    </tr>
+								    
+								</thead>
 								<?php endforeach ?>
 							</tbody>
 			  			</table>

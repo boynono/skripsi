@@ -24,7 +24,6 @@
 	<script type="text/javascript" src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>asset/js/2dataTables.bootstrap.js"></script>
 	  
-
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#lihat').DataTable();
@@ -52,83 +51,71 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                    	<a href="<?php echo site_url('c_admin'); ?>"><i class="glyphicon glyphicon-home"></i> Home</a>
+                    	<a href="<?php echo site_url('c_mahasiswa'); ?>"><i class="glyphicon glyphicon-home"></i> Home</a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="glyphicon glyphicon-file"></i> Data KKNP  <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="glyphicon glyphicon-file"></i> KKNP Jurusan  <i class="glyphicon glyphicon-chevron-down"></i></a>
                         <ul id="demo1" class="collapse">
                             <li>
-                                <a href="<?php echo site_url('c_admin/tambahkknp'); ?>"><i class="glyphicon glyphicon-info"></i> Tambah KKNP</a>
+                                <a href="<?php echo site_url('c_mahasiswa/kknptif'); ?>"><i class="glyphicon glyphicon-info"></i> Informatika</a>
                             </li>
                             <li>
-                                <a href="<?php echo site_url('c_admin/lihatkknp'); ?>"><i class="glyphicon glyphicon-info"></i> Lihat & Edit KKNP</a>
+                                <a href="<?php echo site_url('c_mahasiswa/kknpsi'); ?>"><i class="glyphicon glyphicon-info"></i> Sistem Informasi</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo site_url('c_mahasiswa/kknpsiskom'); ?>"><i class="glyphicon glyphicon-info"></i> Sistem Komputer</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="glyphicon glyphicon-file"></i> Tawaran KKNP  <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="glyphicon glyphicon-file"></i> Status KKNP  <i class="glyphicon glyphicon-chevron-down"></i></a>
                         <ul id="demo2" class="collapse">
                             <li>
-                                <a href="<?php echo site_url('c_admin/tambahtawaran'); ?>"><i class="glyphicon glyphicon-info"></i> Tambah Tawaran</a>
+                                <a href="<?php echo site_url('c_mahasiswa/pengajuan'); ?>"><i class="glyphicon glyphicon-info"></i> Pengajuan</a>
                             </li>
                             <li>
-                                <a href="<?php echo site_url('c_admin/lihattawaran'); ?>"><i class="glyphicon glyphicon-info"></i> Lihat & Edit Tawaran</a>
+                                <a href="<?php echo site_url('c_mahasiswa/pengerjaan'); ?>"><i class="glyphicon glyphicon-info"></i> Pengerjaan</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo site_url('c_mahasiswa/selesai'); ?>"><i class="glyphicon glyphicon-info"></i> Selesai</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo site_url('c_mahasiswa/ditolak'); ?>"><i class="glyphicon glyphicon-info"></i> Ditolak</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="glyphicon glyphicon-file"></i> Pengajuan Perusahaan  <i class="glyphicon glyphicon-chevron-down"></i></a>
+                    	<a href="<?php echo site_url('c_mahasiswa/tawaran'); ?>"><i class="glyphicon glyphicon-upload"></i> Tawaran KKNP</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="glyphicon glyphicon-user"></i> Login Admin  <i class="glyphicon glyphicon-chevron-down"></i></a>
                         <ul id="demo3" class="collapse">
                             <li>
-                                <a href="<?php echo site_url('c_admin/tambahpengajuan'); ?>"><i class="glyphicon glyphicon-info"></i> Tambah Pengajuan</a>
+                                <?php echo form_open('c_mahasiswa/cekadmin' , 'class="form-inline"'); ?>
+								<div class="form-group">
+								<label class="col-lg-2 control-label">User<br></label>
+									<div class="col-lg-9">
+									  	<input type="text" class="form-control" name="username"  placeholder="username">
+									</div>
+								</div>		
+								<div class="form-group">
+								    <label class="col-lg-2 control-label">Pass<br></label>
+									    <div class="col-lg-9">
+											<input type="password" class="form-control" name="password"  placeholder="password">
+										 </div>
+								</div>
+								<div class="form-group">
+									<div class="col-lg-offset-6 col-lg-10">
+										<button type="submit" class="btn btn-success">Login</button>
+									</div>
+								</div>
+							<?php echo form_close(); ?>
                             </li>
-                            <li>
-                                <a href="<?php echo site_url('c_admin/lihatpengajuan'); ?>"><i class="glyphicon glyphicon-info"></i> Lihat & Edit Pengajuan</a>
-                            </li>
+                            
                         </ul>
                     </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="glyphicon glyphicon-file"></i> Daftar Mahasiswa  <i class="glyphicon glyphicon-chevron-down"></i></a>
-                        <ul id="demo4" class="collapse">
-                            <li>
-                                <a href="<?php echo site_url('c_admin/tambahmahasiswa'); ?>"><i class="glyphicon glyphicon-info"></i> Tambah Mahasiswa</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo site_url('c_admin/lihatmahasiswa'); ?>"><i class="glyphicon glyphicon-info"></i> Lihat & Edit Mahasiswa</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo5"><i class="glyphicon glyphicon-file"></i> Data Perusahaan  <i class="glyphicon glyphicon-chevron-down"></i></a>
-                        <ul id="demo5" class="collapse">
-                            <li>
-                                <a href="<?php echo site_url('c_admin/tambahperusahaan'); ?>"><i class="glyphicon glyphicon-info"></i> Tambah Perusahaan</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo site_url('c_admin/lihatperusahaan'); ?>"><i class="glyphicon glyphicon-info"></i> Lihat & Edit Perusahaan</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo6"><i class="glyphicon glyphicon-file"></i> Dosen Pembimbing  <i class="glyphicon glyphicon-chevron-down"></i></a>
-                        <ul id="demo6" class="collapse">
-                            <li>
-                                <a href="<?php echo site_url('c_admin/tambahdosen'); ?>"><i class="glyphicon glyphicon-info"></i> Tambah Dosen</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo site_url('c_admin/lihatdosen'); ?>"><i class="glyphicon glyphicon-info"></i> Lihat & Edit Dosen</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo7"><i class="glyphicon glyphicon-user"></i> Admin  <i class="glyphicon glyphicon-chevron-down"></i></a>
-                        <ul id="demo7" class="collapse">
-                            <li>
-                                <a href="<?php echo site_url('c_admin/logout'); ?>"><i class="glyphicon glyphicon-trash"></i> Keluar</a>
-                            </li>
-                        </ul>
-                    </li>
-            	</ul>
+                    
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </nav>
@@ -142,6 +129,8 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             <img class="tengah" src="<?php echo base_url();?>asset/gambar/kknp2.png" />
+                            <br />
+                            <small><?php echo $judul;?></small>
                         </h1>
                         
                     </div>
@@ -155,33 +144,32 @@
 								<tr>
 									<th>perusahaan</th>
 									<th>alamat</th>
+									<th>email</th>
+									<th>kontak</th>
 									<th>tanggal mulai</th>
 									<th>tanggal selesai</th>
 									<th>objek</th>
-									<th>nama mahasiswa</th>
-									<th>dosen pembimbing</th>
-									<th>status</th>
-									<th>pilihan</th>
+									<!-- <th>pilihan</th> -->
+									
 								</tr>
 							</thead>
 					
 			   				<tbody>
 			   					<?php 
 									$i = 1 ;
-									foreach ($lihatkknp as $data): 
+									foreach ($tawaran as $data): 
 								?>
 								
 								
 								<tr>
 								    <td><?php echo $data->nm_perusahaan ?></td>
 								    <td><?php echo $data->alamat ?></td>
+								    <td><?php echo $data->email ?></td>
+								    <td><?php echo $data->kontak ?></td>
 								    <td><?php echo $data->tanggal_mulai ?></td>
 								    <td><?php echo $data->tanggal_selesai ?></td>
 								    <td><?php echo $data->objek ?></td>
-								    <td><?php echo $data->nm_mhs ?></td>
-								    <td><?php echo $data->nm_dosen ?></td>
-								    <td><?php echo $data->keterangan ?></td>
-								    <td>
+								    <!-- <td>
 								    	<div class="btn-group">
 								    	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> 
 								    	Pilihan
@@ -189,10 +177,10 @@
 								    	</button>
 											<ul class="dropdown-menu" role="menu">
 												<li>
-													<a ><?php echo anchor('c_admin/editkknp/'.$data->id_kknp,"  Edit  ");?></a>
+													<a ><?php echo anchor('c_admin/edittawaran/'.$data->id_tawaran,"  Edit  ");?></a>
 												</li>
 												<li>
-													<a ><?php echo anchor('c_admin/hapuskknp/'.$data->id_kknp,"   Hapus  ");?></a>
+													<a ><?php echo anchor('c_admin/hapustawaran/'.$data->id_tawaran,"   Hapus  ");?></a>
 												</li>
 												<li class="disabled">
 													<a href="#">Another action</a>
@@ -201,7 +189,7 @@
 												</li>
 											</ul>	
 										</div>
-								    </td>
+								    </td> -->
 								</tr>
 								<?php endforeach ?>
 							</tbody>

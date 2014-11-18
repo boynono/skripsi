@@ -5,47 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-
-	<!--link rel="stylesheet/less" href="asset/less/bootstrap.less" type="text/css" /-->
-	<!--link rel="stylesheet/less" href="asset/less/responsive.less" type="text/css" /-->
-	<!--script src="js/less-1.3.3.min.js"></script-->
-	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
-	
-	<link href="<?php echo base_url();?>asset/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<!-- GLOBAL -->
+	<link href="<?php echo base_url();?>asset/css/2bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="<?php echo base_url();?>asset/css/bootstrap.css" rel="stylesheet" type="text/css">
-	<link href="<?php echo base_url();?>asset/css/style.css" rel="stylesheet" type="text/css">
-	<link href="<?php echo base_url();?>asset/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
-
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-    <script src="asset/js/html5shiv.js"></script>
-  <![endif]-->
-
-  <!-- Fav and touch icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="asset/img/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="asset/img/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="asset/img/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="asset/img/apple-touch-icon-57-precomposed.png">
-  <link rel="shortcut icon" href="asset/img/favicon.png">
+	<link href="<?php echo base_url();?>asset/css/sb-admin.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url();?>asset/css/tambahan.css" rel="stylesheet" type="text/css">
   
-	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>asset/js/dataTables.bootstrap.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>asset/js/scripts.js"></script>
+  
 	
 	<!-- DataTables CSS -->
-<!--<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.2/css/jquery.dataTables.css">-->
-<link href="<?php echo base_url();?>asset/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
-  
-<!-- jQuery -->
-<!--<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery-1.10.2.min.js"></script>
--->	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery-1.11.1.min.js"></script>
+	<link href="<?php echo base_url();?>asset/css/2dataTables.bootstrap.css" rel="stylesheet" type="text/css">
 	  
-<!-- DataTables -->
-<!--<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.dataTables.js"></script>		
--->	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery.dataTables.min.js"></script>		
+	<!-- DataTables Jquery -->
+	<script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>asset/js/2jquery.dataTables.min.js"></script>		
+	<script type="text/javascript" src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>asset/js/2dataTables.bootstrap.js"></script>
+	  
+
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#lihat').DataTable();

@@ -1,0 +1,40 @@
+/*
+   logo-nav.css
+   <project>
+   
+   Created by boynono on 2014-11-12.
+   Copyright 2014 boynono. All rights reserved.
+*/
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.atas {
+	alignment-adjust:central;
+	/*background-color: #b0c4de ;*/
+	/*background-image: url("gradient_bg.png");
+    background-repeat: repeat-x;*/
+}
+.bawah {
+	/*background-color: #b0c4de ;*/
+	/*background-image: url("gradient_bg.png");
+    background-repeat: repeat-x;*/
+}
+.tengah{
+	/*background-color: #b0c4de ;*/
+	/*background-image: url("gradient_bg.png");
+    background-repeat: repeat-x;*/
+}
+.side{
+	/*margin-top:15px;*/
+}
+.konten{
+	/*margin-top: 15px;*/
+}
+img.tengah {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

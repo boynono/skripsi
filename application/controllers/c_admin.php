@@ -3,6 +3,7 @@
 class C_admin extends CI_Controller {
 		
 	public function index() {
+		$data['judul']="Halaman Admin";
 		$data['kknp']=$this->m_admin->kknp();
 		$this->load->view('v_admin',$data);	
 	}
@@ -14,6 +15,7 @@ class C_admin extends CI_Controller {
 	}
 //=====================KKNP	
 	function lihatkknp() {
+		$data['judul']="Data KKNP";
 		$data['lihatkknp']=$this->m_admin->lihatkknp();
 		$this->load->view('v_kknp',$data);	
 	}
@@ -23,6 +25,7 @@ class C_admin extends CI_Controller {
 			$data['pengajuan']=$this->m_admin->pengajuan();
 			$data['dosen']=$this->m_admin->dosen();
 			$data['status']=$this->m_admin->status();
+			$data['judul']="Tambah Data KKNP";
 			$this->load->view('v_tambahkknp',$data);
 		}
 		else{
@@ -32,8 +35,10 @@ class C_admin extends CI_Controller {
 	}	
 	
 	function editkknp($id_kknp){
-		if($_POST==NULL){	
+		if($_POST==NULL){
+			$data['judul']="Edit Data KKNP";	
 			$data['hasil']= $this->m_admin->getIdkknp($id_kknp);
+			// $data['kknp']= $this->m_admin->kknp2($id_kknp);
 			$data['mahasiswa']=$this->m_admin->mahasiswa();
 			$data['pengajuan']=$this->m_admin->pengajuan();
 			$data['dosen']=$this->m_admin->dosen();
@@ -53,11 +58,13 @@ class C_admin extends CI_Controller {
 	}
 //======================TAWARAN========================
 	function lihattawaran(){
+		$data['judul']="Data Tawaran KKNP";
 		$data['tawaran']=$this->m_admin->tawaran();
 		$this->load->view('v_tawaran',$data);
 	}
 	function tambahtawaran(){
 		if($_POST==NULL){
+			$data['judul']="Tambah Tawaran KKNP";
 			$data['perusahaan']=$this->m_admin->perusahaan();
 			$this->load->view('v_tambahtawaran',$data);
 		}
@@ -67,7 +74,8 @@ class C_admin extends CI_Controller {
 		}
 	}
 	function edittawaran($id_tawaran){
-		if($_POST==NULL){	
+		if($_POST==NULL){
+			$data['judul']="Edit Tawaran KKNP";	
 			$data['hasil']= $this->m_admin->getIdtawaran($id_tawaran);	
 			$data['perusahaan']=$this->m_admin->perusahaan();
 			$this->load->view('v_edittawaran',$data);	
